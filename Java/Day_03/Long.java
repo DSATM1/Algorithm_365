@@ -1,5 +1,3 @@
-package Java.Day_03;
-
 public class Long {
     public static void main(String [] args)
     {
