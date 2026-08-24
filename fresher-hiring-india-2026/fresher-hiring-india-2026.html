@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fresher SDE Hiring in India 2026 — Research Dashboard</title>
+<style>
+:root{
+  --bg:#0e1116; --panel:#161b22; --panel2:#1c232c; --line:#2a323d;
+  --ink:#e6edf3; --dim:#9aa7b4; --faint:#6b7785;
+  --a:#4c9aff; --b:#22c55e; --c:#f59e0b; --d:#f472b6; --e:#a78bfa;
+}
+@media (prefers-color-scheme: light){
+  :root{ --bg:#f7f8fa; --panel:#fff; --panel2:#f0f2f5; --line:#dfe3e8;
+    --ink:#12171d; --dim:#4d5a68; --faint:#7a8794; --a:#0b5fd0; }
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:15px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  -webkit-text-size-adjust:100%}
+.wrap{max-width:1180px;margin:0 auto;padding:0 16px 80px}
+header{padding:32px 0 20px;border-bottom:1px solid var(--line);margin-bottom:20px}
+h1{font-size:26px;line-height:1.25;margin:0 0 8px;letter-spacing:-.02em}
+.sub{color:var(--dim);font-size:14px}
+h2{font-size:19px;margin:34px 0 12px;letter-spacing:-.01em}
+h3{font-size:15px;margin:22px 0 8px;color:var(--dim);text-transform:uppercase;letter-spacing:.08em}
+p{margin:0 0 12px}
+a{color:var(--a)}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;position:sticky;top:0;background:var(--bg);
+  padding:10px 0;z-index:20;border-bottom:1px solid var(--line)}
+.tab{padding:7px 13px;border:1px solid var(--line);border-radius:999px;background:var(--panel);
+  color:var(--dim);cursor:pointer;font-size:13px;white-space:nowrap}
+.tab.on{background:var(--a);border-color:var(--a);color:#fff;font-weight:600}
+section{display:none}
+section.on{display:block}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));margin:16px 0 24px}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px}
+.stat .n{font-size:24px;font-weight:700;letter-spacing:-.02em;line-height:1.15}
+.stat .l{font-size:12px;color:var(--dim);margin-top:5px;line-height:1.4}
+.stat .s{font-size:11px;color:var(--faint);margin-top:6px}
+.up{color:var(--b)} .down{color:#ef4444} .warn{color:var(--c)}
+.controls{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}
+input[type=search],select{background:var(--panel);border:1px solid var(--line);color:var(--ink);
+  border-radius:8px;padding:9px 11px;font-size:14px;flex:1;min-width:130px}
+table{width:100%;border-collapse:collapse;font-size:13px;margin:8px 0 20px}
+th{text-align:left;padding:9px 8px;border-bottom:2px solid var(--line);color:var(--dim);
+  font-size:11px;text-transform:uppercase;letter-spacing:.06em;font-weight:600;white-space:nowrap}
+td{padding:10px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:hover td{background:var(--panel)}
+.tblwrap{overflow-x:auto;-webkit-overflow-scrolling:touch;
+  border:1px solid var(--line);border-radius:12px;background:var(--panel)}
+.tblwrap table{margin:0}
+.tblwrap th,.tblwrap td{padding-left:12px;padding-right:12px}
+.pill{display:inline-block;padding:2px 8px;border-radius:999px;font-size:11px;font-weight:600;white-space:nowrap}
+.p-serv{background:#4c9aff22;color:#4c9aff} .p-mid{background:#a78bfa22;color:#a78bfa}
+.p-prod{background:#22c55e22;color:#22c55e} .p-start{background:#f472b622;color:#f472b6}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:12px 0}
+.card h4{margin:0 0 8px;font-size:15px}
+.callout{border-left:3px solid var(--c);background:var(--panel);padding:12px 14px;border-radius:0 10px 10px 0;margin:14px 0}
+.callout.good{border-left-color:var(--b)}
+.callout.bad{border-left-color:#ef4444}
+ul{margin:0 0 12px;padding-left:20px} li{margin:5px 0}
+.bar{height:9px;background:var(--panel2);border-radius:5px;overflow:hidden;margin:5px 0 2px}
+.bar i{display:block;height:100%;border-radius:5px}
+.legend{font-size:12px;color:var(--dim);display:flex;justify-content:space-between}
+code{background:var(--panel2);padding:1px 5px;border-radius:4px;font-size:12.5px}
+.quote{border-left:3px solid var(--line);padding:8px 0 8px 14px;margin:10px 0;color:var(--dim);font-style:italic;font-size:13.5px}
+.quote b{color:var(--ink);font-style:normal}
+.note{font-size:12px;color:var(--faint);margin-top:10px}
+footer{margin-top:50px;padding-top:20px;border-top:1px solid var(--line);font-size:12px;color:var(--faint)}
+.two{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>Fresher Software Developer Hiring in India — 2026</h1>
+  <div class="sub">2025 &amp; 2026 passout batches · IT services, GCCs, product companies, startups · Bangalore focus<br>
+  Research compiled 20 August 2026 · 120+ companies · 8 portals · ~460 sources checked</div>
+</header>
+
+<div class="tabs" id="tabs">
+  <div class="tab on" data-t="market">Market</div>
+  <div class="tab" data-t="companies">Companies</div>
+  <div class="tab" data-t="skills">Skills &amp; JDs</div>
+  <div class="tab" data-t="interview">Interviews</div>
+  <div class="tab" data-t="salary">Salary</div>
+  <div class="tab" data-t="action">Action plan</div>
+</div>
+
+<!-- MARKET -->
+<section id="market" class="on">
+<h2>The market did not collapse. It re-composed.</h2>
+<div class="grid">
+  <div class="stat"><div class="n up">+6.1%</div><div class="l">India tech revenue FY26 ($315bn)</div><div class="s">NASSCOM SR 2026</div></div>
+  <div class="stat"><div class="n warn">+2.3%</div><div class="l">Headcount growth FY26 — widest revenue/headcount gap on record</div><div class="s">NASSCOM SR 2026</div></div>
+  <div class="stat"><div class="n down">−25%</div><div class="l">"One in four entry-level IT jobs has disappeared"</div><div class="s">foundit CEO, Aug 2026</div></div>
+  <div class="stat"><div class="n up">+33%</div><div class="l">AI/ML role growth YoY</div><div class="s">Naukri JobSpeak, Jul 2026</div></div>
+  <div class="stat"><div class="n up">89%</div><div class="l">Bengaluru employer fresher-hiring intent — highest in India</div><div class="s">TeamLease EdTech, Aug 2026</div></div>
+  <div class="stat"><div class="n">437</div><div class="l">GCCs in Bengaluru — India's largest concentration</div><div class="s">Flexiple, Aug 2026</div></div>
+  <div class="stat"><div class="n warn">3%</div><div class="l">of fresher postings pay above ₹12 LPA</div><div class="s">foundit, Jul 2026</div></div>
+  <div class="stat"><div class="n warn">65%</div><div class="l">of fresher postings pay below ₹5 LPA</div><div class="s">foundit, Jul 2026</div></div>
+  <div class="stat"><div class="n">42.6%</div><div class="l">graduate employability (strict measure), down from 44.3%</div><div class="s">Mercer|Mettl</div></div>
+  <div class="stat"><div class="n">83%</div><div class="l">of engineering grads leave college with no offer or internship</div><div class="s">Unstop Talent Report 2026</div></div>
+  <div class="stat"><div class="n">~60%</div><div class="l">of fresher postings now require or prefer a prior internship</div><div class="s">foundit, Jul 2026</div></div>
+  <div class="stat"><div class="n">12%→32%</div><div class="l">internships &amp; contracts as a share of entry-level openings (2024→2026)</div><div class="s">foundit</div></div>
+</div>
+
+<h3>Who is taking fresher share</h3>
+<div class="card">
+  <div style="font-size:13px;color:var(--dim);margin-bottom:6px">GCC share of fresher hiring</div>
+  <div class="bar"><i style="width:11%;background:var(--b)"></i></div>
+  <div class="legend"><span>8% (2025) → <b style="color:var(--ink)">11% (2026)</b></span><span class="up">rising</span></div>
+  <div style="font-size:13px;color:var(--dim);margin:16px 0 6px">Traditional IT services share of fresher hiring</div>
+  <div class="bar"><i style="width:24%;background:#ef4444"></i></div>
+  <div class="legend"><span>32% (2025) → <b style="color:var(--ink)">24% (2026)</b></span><span class="down">falling</span></div>
+  <div style="font-size:13px;color:var(--dim);margin:16px 0 6px">Fresher share <em>within</em> GCC hiring</div>
+  <div class="bar"><i style="width:15%;background:var(--c)"></i></div>
+  <div class="legend"><span>28% (2024) → <b style="color:var(--ink)">15% (2025)</b></span><span class="down">GCCs grew but got pickier</span></div>
+  <div class="note">Sources: foundit (Aug 2026), Quess FY26 Pulse Report (19 Aug 2026)</div>
+</div>
+
+<h3>The five structural facts</h3>
+<div class="card">
+<ol style="padding-left:18px;margin:0">
+<li><b>Batch hiring is dead.</b> HCLTech Group CHRO (Jul 2026): hiring now follows "quarterly demand patterns rather than fixed annual targets." TCS made ~25,000 FY27 fresher offers — lowest since FY20, down from ~44,000.</li>
+<li><b>AI absorbed the classic fresher workload.</b> NASSCOM's own estimate: AI can perform <b>20–40% of common tech tasks</b> — routine coding, test-case generation, documentation. That <em>was</em> the Indian IT fresher job description.</li>
+<li><b>Pay went bimodal inside the same company.</b> TCS pays ₹3.4 LPA (Ninja) and ₹11.8 LPA (Prime) off the same test. Infosys pays ₹3.6 LPA (SE) and ₹21 LPA (Specialist Programmer L3). <b>The 6× spread is decided by 60–90 minutes of coding.</b></li>
+<li><b>GCCs are the growth engine, Bangalore is the capital.</b> 2,117 GCCs / 2.36m people / $98.4bn (Zinnov–NASSCOM). Karnataka's GCC Policy targets 1,000 GCCs, 3.5 lakh jobs and <b>1 lakh subsidised internships</b> by 2029.</li>
+<li><b>Evidence replaced credentials.</b> Employers "prioritised internship experience, GitHub portfolios and cloud certifications over academic credentials alone" (HireDoor, 18,400 listings). 30% of Indian employers now hire without degree requirements vs 19% globally (WEF).</li>
+</ol>
+</div>
+
+<h3>The "stale batch" problem — what's true and what's folklore</h3>
+<div class="callout good">
+<b>Folklore:</b> "2025 passouts are locked out."<br>
+<b>Reality:</b> TCS NQT 2026 explicitly accepts <b>2024, 2025 and 2026 batches</b>. Amazon's new-grad template says "graduated within the last <b>24 months</b>." Infosys, Wipro, Cognizant, Tech Mahindra, DXC and Oracle all list multiple batches.
+</div>
+<div class="callout bad">
+<b>The three real constraints — none is the year on your degree:</b>
+<ol style="padding-left:18px;margin:6px 0 0">
+<li><b>24-month academic gap cap + "no extended education."</b> A backlog-delayed degree disqualifies you at TCS regardless of batch.</li>
+<li><b>Age bands.</b> 18–28 at TCS/TechM/Wipro; 18–30 at Cognizant, "no relaxations."</li>
+<li><b>Recruiter inference about the blank year.</b> Indian unicorns accept 2024/2025 batches <em>"if you have either a freelance portfolio or one prior internship that ended on good terms."</em> A 12-month blank is screened out; a 12-month gap with GitHub / freelance / internship evidence is not.</li>
+</ol>
+</div>
+<p class="note">Context for why employers are wary: median job tenure for Indian workers aged 15–29 is <b>13 months</b>, and replacement hiring is ~40% of Gen Z hiring demand (Quess, Aug 2026). Off-campus also carries a salary penalty — comparable firms offer ₹5–6 LPA on-campus vs ₹2.5–3 LPA off-campus.</p>
+
+<h3>Offer-to-joining is now endemic</h3>
+<p>Post-offer waits went 4–8 weeks (2021–22) → 2–4 months (2023–24) → <b>6–18 months</b> for parts of the 2024–26 cohorts. NITES filed Labour Ministry complaints over TCS delaying 600+ lateral hires and Wipro delaying 200+ candidates. Tech Mahindra reportedly had ~1,000 graduates still awaiting offer letters mid-2026. Oracle withdrew campus offers. Infosys terminated 300+ freshers at Mysuru in Feb 2025 for failing internal training assessments.</p>
+<div class="callout"><b>Practical rule:</b> no joining date within <b>90 days</b> of the offer letter (or 180 days of selection-only) → treat it as a signal, run a parallel search, document every communication, escalate via the placement cell or NITES.</div>
+</section>
+
+<!-- COMPANIES -->
+<section id="companies">
+<h2>Company matrix</h2>
+<p class="sub">Search by name, filter by segment. Blank cells mean the employer publishes nothing — not that the criterion doesn't exist.</p>
+<div class="controls">
+  <input type="search" id="q" placeholder="Search company, program, skill…">
+  <select id="seg">
+    <option value="">All segments</option>
+    <option value="serv">IT services</option>
+    <option value="mid">Mid-tier / GSI</option>
+    <option value="prod">Product / GCC</option>
+    <option value="start">Indian product / startup</option>
+  </select>
+</div>
+<div class="tblwrap">
+<table id="tbl">
+<thead><tr><th>Company</th><th>Segment</th><th>Fresher role / program</th><th>Batches</th><th>Academic gate</th><th>Selection process</th><th>Fresher CTC</th></tr></thead>
+<tbody id="rows"></tbody>
+</table>
+</div>
+<div id="count" class="note"></div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+<h2>What the JDs actually demand</h2>
+<h3>Skill frequency in Bangalore fresher JDs, 2026</h3>
+<div class="card">
+  <div style="margin-bottom:4px"><b>Tier 1 — appears in &gt;70% of JDs</b></div>
+  <div class="bar"><i style="width:85%;background:var(--b)"></i></div>
+  <p style="font-size:13.5px;margin:6px 0 16px">Data Structures &amp; Algorithms · one core language (Java / Python / C++ / JavaScript) · SQL &amp; relational DB · Git · REST APIs · problem-solving &amp; communication</p>
+
+  <div style="margin-bottom:4px"><b>Tier 2 — 50–70%</b></div>
+  <div class="bar"><i style="width:60%;background:var(--a)"></i></div>
+  <p style="font-size:13.5px;margin:6px 0 16px">JavaScript/TypeScript · React · Node.js/Express · Django/Flask/FastAPI · OOP design · <b>Cloud (AWS most named)</b> · unit testing &amp; debugging · Linux/Unix</p>
+
+  <div style="margin-bottom:4px"><b>Tier 3 — 30–50% · the 2026 movers</b></div>
+  <div class="bar"><i style="width:40%;background:var(--c)"></i></div>
+  <p style="font-size:13.5px;margin:6px 0 16px"><b>AI / GenAI / LLM</b> · microservices · Docker · MongoDB/NoSQL · Spring Boot · distributed systems basics</p>
+
+  <div style="margin-bottom:4px"><b>Tier 4 — &lt;30%</b></div>
+  <div class="bar"><i style="width:22%;background:var(--e)"></i></div>
+  <p style="font-size:13.5px;margin:6px 0 0">Kubernetes · Kafka · Go/Kotlin/Rust · Flutter/React Native · CI/CD · system design ("familiarity," not depth)</p>
+</div>
+<p class="note">HireDoor's July 2026 analysis of 18,400+ listings: most-requested stack is <b>Python, SQL, AWS, Docker, Kubernetes, React, Java, Node.js</b>. TheHireHub: 60–70% of fresher JDs now list AI/ML as a core requirement, with AI-skilled freshers at ₹11–13 LPA vs ₹6–8 LPA. <b>AI is the premium layer on top of a conventional stack, not a replacement for it.</b></p>
+
+<h3>Verbatim from live 2026 postings</h3>
+<div class="quote"><b>Amazon</b> — "Expected graduation between October 2025 - September 2026, <b>OR graduated within the last 24 months</b>." Preferred: "…<b>AI tools for development productivity</b>, Cloud platforms (preferably AWS), Database systems…"<br><span style="font-size:12px">The single most useful phrasing a 2025 passout will encounter — a rolling window instead of a batch lock.</span></div>
+<div class="quote"><b>Salesforce, Bangalore &amp; Hyderabad</b> — "<b>Batch: 2026 only</b>" · "<b>Minimum 7.5 CGPA</b>" · "<b>No active backlogs</b>" · "Strong Data Structures &amp; Algorithms"</div>
+<div class="quote"><b>TCS NQT 2026</b> — "Batch of 2024, 2025 and 2026" · "minimum aggregate of 60%… in class 10th, 12th, Diploma, Graduation and Post-Graduation" · "No pending backlog" · "<b>No extended education will be allowed</b>" · "Overall academic gap should not exceed <b>24 months</b>" · "18 to 28 years"</div>
+<div class="quote"><b>CodeHall Technology, Bengaluru</b> (₹3–4L, 0–1 yrs) — "<b>Must know programming (do not apply if you have written less than 3000 lines of code)</b>" · "<b>Please include link to your Github profile when you apply</b>"</div>
+<div class="quote"><b>CEDRETO Marketing, Bengaluru</b> (₹3.5–4.5L) — "<b>At least one product build and published</b>" · "Strong knowledge of building RESTful APIs using Django Rest Framework"</div>
+<div class="quote"><b>Cisco, Bangalore</b> — "Bachelor's degree with minimum 2 years experience, <b>OR Master's degree with 0 years experience (2026 freshers welcome)</b>" · Preferred: "Go (Golang), Ruby on Rails, or Node.js"</div>
+<div class="quote"><b>Juspay, Bangalore</b> — "<b>Interest in functional programming concepts</b>" · "Understanding of distributed systems and scalability challenges"</div>
+<div class="quote"><b>Fragma Data Systems</b> — a posting titled <em>"Fresher Data Engineer"</em> that requires "<b>Hands-on Work experience as a Python Developer</b>." And, verbatim from a live Bengaluru listing: "<b>Fresher having 1-3 years of experience</b>."</div>
+
+<div class="callout">
+<b>The biggest shift:</b> portfolio proof is now a hard filter, not a nice-to-have. A GitHub link and a deployed project have replaced the CGPA screen at the companies that pay the most. Meanwhile only <b>30% of freshers</b> pursue any hands-on work beyond coursework and <b>65% believe a degree alone secures a high-paying job.</b> That gap is the opportunity.
+</div>
+
+<h3>Backend stack by employer type</h3>
+<div class="two">
+<div class="card"><h4>Java + Spring Boot</h4><p style="font-size:13.5px;margin:0">Flipkart, Swiggy, PhonePe, Meesho, Dream11 — and virtually all IT services. The default.</p></div>
+<div class="card"><h4>Golang</h4><p style="font-size:13.5px;margin:0">Now co-equal at Swiggy ("Java or Golang" in the JD), Zerodha, Groww, Zepto, Uber.</p></div>
+<div class="card"><h4>Node.js / TypeScript</h4><p style="font-size:13.5px;margin:0">CRED, Razorpay, Zomato.</p></div>
+<div class="card"><h4>Python</h4><p style="font-size:13.5px;margin:0">Zepto, data teams everywhere, all AI startups.</p></div>
+<div class="card"><h4>Kotlin / Swift</h4><p style="font-size:13.5px;margin:0">Mobile at CRED, Swiggy, Myntra.</p></div>
+<div class="card"><h4>Haskell / PureScript</h4><p style="font-size:13.5px;margin:0">Uniquely Juspay — and they say so in the JD.</p></div>
+</div>
+<p class="note">Infrastructure literacy expected across all: Kafka, Redis, Kubernetes, AWS/GCP, MySQL/Postgres, Linux.</p>
+
+<h3>Credentials that actually move the needle</h3>
+<div class="tblwrap"><table>
+<thead><tr><th>#</th><th>Credential</th><th>Evidence</th></tr></thead>
+<tbody>
+<tr><td>1</td><td><b>AWS Solutions Architect – Associate</b></td><td>Single most-requested credential across 18,400 listings; cloud certs carry a <b>10–15% salary premium</b></td></tr>
+<tr><td>2</td><td>AWS Cloud Practitioner / Azure AZ-900</td><td>Baseline hygiene only — passes filters, differentiates nothing</td></tr>
+<tr><td>3</td><td>Azure AI-900/AI-102, Google Cloud ACE</td><td>Employer-dependent</td></tr>
+<tr><td>4</td><td>Oracle Java (OCA/OCP)</td><td>Still explicitly named in IT services JDs</td></tr>
+<tr><td>5</td><td>NVIDIA / DeepLearning.AI GenAI certs</td><td>Narrative value, low filter value</td></tr>
+<tr><td>6</td><td>Meta / Google professional certificates</td><td>Lowest recruiter recognition in India</td></tr>
+</tbody></table></div>
+<p class="note"><b>Demonstrable AI/ML competency carries a 25–40% premium — but that means shipped projects, not certificates.</b> In every dataset, a deployed project with a public repo outranks a certificate.</p>
+</section>
+
+<!-- INTERVIEW -->
+<section id="interview">
+<h2>The interview process, round by round</h2>
+<div class="tblwrap"><table>
+<thead><tr><th>Tier</th><th>Rounds</th><th>Flow</th></tr></thead>
+<tbody>
+<tr><td>Mass IT services</td><td>3–4</td><td>Online test → Technical → (Managerial) → HR</td></tr>
+<tr><td>GCC / mid-tier product</td><td>5–6</td><td>OA → phone/HireVue → 2–3 technical → hiring manager → HR</td></tr>
+<tr><td>Indian product / consumer tech</td><td>4–5</td><td>OA → <b>machine coding</b> → DSA → LLD/HM → culture fit</td></tr>
+<tr><td>FAANG-tier</td><td>4–6</td><td>OA → 2–4 technical + behavioural (<b>Amazon adds Bar Raiser</b>)</td></tr>
+</tbody></table></div>
+<p class="note">Campus flows compress to 4–10 weeks; off-campus product pipelines run <b>6–14 weeks</b>. A real 2026 Amazon SDE-1 data point: applied January → OA February → loop 14 May–11 June → offer 15 June. <b>Five months, with a three-month dead zone between OA and loop.</b></p>
+
+<h3>The machine coding round — Bangalore's signature format</h3>
+<div class="card">
+<p>90–150 minutes, your own IDE, <b>working runnable code required</b> — not pseudocode, not a class diagram. A compact real-world spec, shipped as an in-memory application with a driver class. No DB, no framework, no UI. Pure OOP.</p>
+<p style="font-size:13.5px"><b>Canonical problems:</b> parking lot · Splitwise · vending machine · snake &amp; ladder · elevator bank · cab booking · tic-tac-toe · chess move validator · library management · in-memory key-value store · rate limiter · LRU cache · Trello · 2048</p>
+<h4 style="margin-top:14px">Scoring rubric</h4>
+<div class="bar"><i style="width:30%;background:var(--a)"></i></div><div class="legend"><span>Code design &amp; class structure</span><span>~30%</span></div>
+<div class="bar" style="margin-top:10px"><i style="width:25%;background:var(--b)"></i></div><div class="legend"><span><b>It compiles and runs correctly</b></span><span>~25%</span></div>
+<div class="bar" style="margin-top:10px"><i style="width:20%;background:var(--e)"></i></div><div class="legend"><span>SOLID + design patterns</span><span>~20%</span></div>
+<div class="bar" style="margin-top:10px"><i style="width:15%;background:var(--c)"></i></div><div class="legend"><span><b>Extensibility</b> — they add a requirement mid-review</span><span>~15%</span></div>
+<div class="bar" style="margin-top:10px"><i style="width:10%;background:var(--d)"></i></div><div class="legend"><span>Edge cases &amp; validation</span><span>~10%</span></div>
+<p style="font-size:13px;margin-top:14px"><b>Time split:</b> 10–15 min design on paper → 15–20 min models → 25–30 min business logic → 10 min driver → 5–10 min polish. Directory hygiene (<code>models/</code>, <code>services/</code>, <code>strategies/</code>, <code>exceptions/</code>) is itself scored.</p>
+<p style="font-size:13px;margin:8px 0 0"><b>Who runs it:</b> Flipkart (originator), Swiggy, Uber India, Ola, Udaan, Gojek, CRED, Razorpay, PhonePe, Meesho, Zepto. CRED's is the most demanding — a 2.5-hour LLD elimination gate preceded by a 24-hour take-home and a DSA round <b>in a Google Doc, not an IDE</b>.</p>
+</div>
+<div class="callout"><b>This single skill separates candidates who clear Bangalore product interviews from those who don't — and almost nobody prepares for it.</b> A beautiful design that doesn't compile scores near zero.</div>
+
+<h3>DSA topic frequency for Indian fresher rounds</h3>
+<div class="card">
+<div class="bar"><i style="width:95%;background:var(--b)"></i></div><div class="legend"><span><b>Very high</b> — arrays, strings, hashing, two pointers, sliding window, binary search</span></div>
+<div class="bar" style="margin-top:12px"><i style="width:75%;background:var(--a)"></i></div><div class="legend"><span><b>High</b> — trees/BST, recursion &amp; backtracking, stacks &amp; queues, sorting, linked lists</span></div>
+<div class="bar" style="margin-top:12px"><i style="width:55%;background:var(--e)"></i></div><div class="legend"><span><b>Medium-high</b> — graphs (BFS/DFS, grids, topo sort), heaps/top-k, greedy</span></div>
+<div class="bar" style="margin-top:12px"><i style="width:35%;background:var(--c)"></i></div><div class="legend"><span><b>Medium</b> — DP (knapsack, coin change, LIS, grid DP)</span></div>
+<div class="bar" style="margin-top:12px"><i style="width:12%;background:var(--d)"></i></div><div class="legend"><span><b>Low</b> — tries, bit manipulation, segment trees</span></div>
+<p style="font-size:13px;margin-top:14px"><b>Target:</b> solve a LeetCode-medium in under 30 minutes; recognise the pattern within ~2 minutes of reading. Practice split commonly recommended: <b>150 problems — 30 easy / 100 medium / 20 hard</b>.</p>
+<p style="font-size:13px;margin:8px 0 0"><b>Company skews:</b> Amazon — graph traversal + sliding window (~60% of rounds). Google — DP + greedy, "can you do better?", brute force won't clear. Microsoft — trees dominate (~80% of reported interviews). Flipkart/Swiggy — arrays dressed as e-commerce scenarios, often SQL + DSA together. Razorpay/PhonePe — strings, edge cases, financial precision.</p>
+<p style="font-size:13px;margin:8px 0 0"><b>Complexity discussion is not optional.</b> State time and space <em>before</em> coding. OA constraints are an encoded hint — <code>n ≤ 10⁵</code> means O(n log n) at worst.</p>
+</div>
+
+<h3>Assessment platforms</h3>
+<div class="tblwrap"><table>
+<thead><tr><th>Platform</th><th>Format</th><th>What to know</th></tr></thead>
+<tbody>
+<tr><td><b>HackerRank</b></td><td>Coding + DB + MCQ, per-hidden-test scoring</td><td>2,500+ companies. Now sells an <b>AI Interviewer</b> (12,000+ first rounds) and AI pair-programming interviews scored on how you validate AI suggestions</td></tr>
+<tr><td><b>HackerEarth</b></td><td>60–120 min, 1–3 problems</td><td><b>Structural</b> plagiarism detection — renaming variables doesn't defeat it. Flags full-screen exit, paste, tab switch, and <b>code/verbal-explanation mismatch</b></td></tr>
+<tr><td><b>CodeSignal GCA</b></td><td>4 questions / 70 min, all visible upfront</td><td>Face + photo ID verification. <b>AI use explicitly banned</b>; web search for syntax only</td></tr>
+<tr><td><b>Codility</b></td><td>Algorithmic + bug-fixing + knowledge</td><td>Heavy edge-case and large-input weighting. Reports copy/paste behaviour. Used by Microsoft</td></tr>
+<tr><td><b>Mercer Mettl</b></td><td>Cognitive + technical MCQ + coding + Big-Five</td><td><b>India's campus workhorse</b> — Infosys, Wipro, HCL, Cognizant, TCS, Bosch. 30–60 sec/question pace</td></tr>
+<tr><td><b>AMCAT</b></td><td>Adaptive quant/reasoning/verbal</td><td>Most portable score. Rewards <b>balanced</b> performance. No negative marking</td></tr>
+<tr><td><b>CoCubes</b></td><td>Campus mass hiring</td><td>Uniquely includes a <b>typed written-English</b> component</td></tr>
+<tr><td><b>eLitmus pH</b></td><td>60 Q / <b>150 min</b>, offline, pen-and-paper</td><td><b>The hardest.</b> Item Response Theory scoring — hard questions worth more. Handicap-based negative marking: <b>skipping is free, guessing is punished.</b> Score valid 2 years</td></tr>
+<tr><td><b>HirePro</b></td><td>60Q/75min (non-IT); 80Q/100min (IT)</td><td><b>Tab switch = automatic logout.</b> Continuous A/V recording</td></tr>
+<tr><td><b>SHL / Aon cut-e</b></td><td><i>scales</i>: 6–12 min, 12–18 Q per test</td><td>Aggressively adaptive. GCC and consulting arms. Thresholds typically 50th–75th percentile</td></tr>
+</tbody></table></div>
+
+<h3>Company exam patterns worth memorising</h3>
+<div class="two">
+<div class="card"><h4>Amazon OA</h4><p style="font-size:13px;margin:0">2–3.5 hrs: <b>2 DSA (medium–hard), 70–105 min</b> + <b>Work Styles Survey ~80 Likert items</b> mapped to the 16 LPs (paired statements detect contradictions — <b>a bad survey can sink good coding</b>) + sometimes debugging (6–8 snippets). Failure = silent rejection + <b>6–12 month cooling-off</b>. Loop ends with the <b>Bar Raiser</b>, an external interviewer with veto power.</p></div>
+<div class="card"><h4>Google 2026</h4><p style="font-size:13px;margin:0">Restructured loop piloted this year: a <b>Code Comprehension round</b> (read, debug, optimise existing code), a revamped Googleyness &amp; Leadership round with technical design, and an <b>open-ended engineering round for junior candidates</b> replacing one classic round.</p></div>
+<div class="card"><h4>Goldman Sachs</h4><p style="font-size:13px;margin:0">HackerRank OA 90–120 min → <b>HireVue</b> pre-recorded → <b>2 CoderPad live rounds</b> → <b>Superday: 3–5 back-to-back</b>. Mix ~15% easy / 60% medium / 25% hard, with ~<b>20% of interview time on puzzles</b>. ~2-min answer caps make AI assistance impractical.</p></div>
+<div class="card"><h4>JPMorgan Chase</h4><p style="font-size:13px;margin:0"><b>Code for Good</b> is the main fresher door — a 24-hour hackathon in teams of 5–6 for real NGOs. ~2,000–3,000 selected → <b>300–500 offers</b>. Intern stipend ₹80,000/month.</p></div>
+<div class="card"><h4>Zoho</h4><p style="font-size:13px;margin:0">Five rounds: quant (1.5 hr) → programming in <b>C</b> (75 min) → advanced programming → technical (OOP/DBMS/OS) → HR. <b>No minimum CGPA.</b> Plus an offline LLD round: build a console game with collision detection and difficulty levels.</p></div>
+<div class="card"><h4>Juspay</h4><p style="font-size:13px;margin:0">~30-min quiz → 90-min OA → <b>2-day hackathon building a real app</b>. Functional programming required. Any B.Tech discipline, no backlogs. 4–6 week cycle. ₹19–27 LPA.</p></div>
+</div>
+
+<h3>CS fundamentals — the services hit-list</h3>
+<div class="card">
+<p style="font-size:13.5px;margin:0 0 8px"><b>OOPs</b> — four pillars · overloading vs overriding · abstract class vs interface · runtime polymorphism</p>
+<p style="font-size:13.5px;margin:0 0 8px"><b>DBMS</b> — normalisation to 3NF · ACID · <b>all JOIN types with examples</b> · indexing · views · SQL (<b>"second-highest salary" is near-universal</b>, plus GROUP BY/HAVING, self-joins, duplicate removal)</p>
+<p style="font-size:13.5px;margin:0 0 8px"><b>OS</b> — deadlock and the four Coffman conditions · CPU scheduling · paging vs segmentation · process vs thread · virtual memory</p>
+<p style="font-size:13.5px;margin:0"><b>CN</b> — TCP vs UDP · OSI layers · <b>"what happens when you type a URL"</b> · HTTP vs HTTPS · DNS</p>
+<p class="note">Pattern is <b>broad and fast</b> — one or two questions per subject, definition then a "why." Service companies weight these heavily; product companies sample them briefly.</p>
+</div>
+
+<h3>AI in interviews — policy is fragmented, ask before every loop</h3>
+<div class="tblwrap"><table>
+<thead><tr><th>Company</th><th>Candidate AI use</th></tr></thead>
+<tbody>
+<tr><td><b>Amazon</b></td><td class="down"><b>Banned. Detection = disqualification.</b></td></tr>
+<tr><td>CodeSignal GCA</td><td class="down">Banned. Web search for syntax only</td></tr>
+<tr><td>Goldman Sachs</td><td class="warn">Effectively prevented by ~2-min answer caps</td></tr>
+<tr><td><b>Google</b></td><td class="up">No public ban; <b>piloting an AI-assisted interview with Gemini</b>, scored on prompt engineering and output validation</td></tr>
+<tr><td><b>Meta</b></td><td class="up"><b>Actively encourages it</b> — 60-min AI-assisted coding round with models in CoderPad</td></tr>
+<tr><td>Shopify / Coinbase</td><td class="up">Allowed / unrestricted</td></tr>
+<tr><td>Anthropic</td><td class="warn">Allowed for resumes; <b>banned in interviews</b> unless the interviewer says otherwise</td></tr>
+<tr><td>Apple, Netflix, Microsoft</td><td class="warn">No consistent public policy — varies by team and interviewer</td></tr>
+<tr><td>Startups generally</td><td class="up">~67% permit AI</td></tr>
+</tbody></table></div>
+<p class="note">~38% of interviews are being rebuilt in response to AI flagging — expect more in-person finals, live debugging and project deep-dives replacing take-homes. <b>Ask the recruiter in writing what the AI policy is for your specific loop.</b></p>
+<div class="callout bad"><b>AI interviewers are a real hazard too.</b> 63% of job seekers globally have faced one; <b>38% withdrew</b> from a process requiring one; <b>51% who completed one were ghosted</b> (Fortune, May 2026). Indian developers flagged <b>Micro1</b> in May 2026 for 50–60 min fully-AI one-way interviews followed by generic rejections within 24 hours, with allegations of talent-database harvesting rather than real openings. Proctoring false-positive rates disproportionately hit darker-skinned candidates and poor home environments — <b>if auto-flagged, request human review in writing.</b></div>
+
+<h3>Project deep-dive: how they detect fake projects</h3>
+<p>Expect 10–20 minutes on your main project: architecture, <b>tech-stack justification ("why MongoDB and not Postgres?")</b>, your specific contribution, hardest bug, what you'd change, how it scales, how you tested and deployed it.</p>
+<p>Detection is by depth-probing: why this library or data structure · walk through this specific file · what are the failure modes · modify this feature live · cross-check the commit history. HackerEarth names the tell for AI-generated OA code — <em>"a clean graph-traversal implementation the candidate cannot explain in the follow-up"</em> — and recommends a 10-minute live explanation round after every OA. Vendors report roughly <b>half of job seekers admit to using GenAI to misrepresent skills.</b></p>
+
+<h3>System design for freshers — yes, but basic</h3>
+<p><b>In India, LLD is far more common than HLD for SDE-1.</b> Fresher-appropriate prompts: TinyURL, parking lot, rate limiter, elevator, basic Instagram feed, a coupon service with schema — <em>not</em> "design Netflix." Microsoft's explicit bar: <em>"break the problem into components, pick an appropriate data store, explain one trade-off."</em> Basic API design (REST resources, status codes, idempotency, pagination) recurs in fintech.</p>
+</section>
+
+<!-- SALARY -->
+<section id="salary">
+<h2>Salary reality in Bangalore</h2>
+<div class="tblwrap"><table>
+<thead><tr><th>Tier</th><th>Companies</th><th>Fresher CTC</th></tr></thead>
+<tbody>
+<tr><td><b>IT services base</b></td><td>TCS Ninja, Infosys SE, Wipro Elite, Tech Mahindra, HCLTech</td><td>₹3.4–5.0 LPA</td></tr>
+<tr><td><b>IT services premium</b></td><td>TCS Digital ₹7.09–7.60 · TCS Prime ₹9.09–11.80 · Infosys DSE ₹6.25–9.0 · <b>Infosys SP-L3 ₹21</b> · Accenture Advanced ASE ₹6.5–9.0 · Capgemini Senior Analyst ₹7.5</td><td>₹6.5–21 LPA</td></tr>
+<tr><td><b>Mid-tier / GSI</b></td><td>Mphasis ₹4–6.5 · Hexaware ₹4–6 · LTIMindtree ₹4.5–7 · Publicis Sapient ₹5–8 · GlobalLogic ₹5–9 · Bosch ₹5–9</td><td>₹4–9 LPA</td></tr>
+<tr><td><b>Product / GCC / funded startups</b></td><td>Oracle ₹8–14 · SAP ₹8–13 · Amazon ₹16–28 · Flipkart ₹18–25 · Microsoft ₹18–33 · Cisco ₹15–20 · Salesforce ₹18–30 · Juspay ₹19–27 · Meesho ₹15 · PhonePe ₹9–15</td><td>₹8–30 LPA</td></tr>
+<tr><td><b>Top of market</b></td><td>Google L3 ₹25–35 · Meta E3 ₹25–35 · Apple ICT2 ₹22–30 · Amazon L4 ₹20–28 · Tower Research ₹25–35 · Goldman ₹15–36</td><td>₹20–36 LPA TC</td></tr>
+</tbody></table></div>
+<p class="note">Bengaluru GCC entry benchmark (0–4 yrs): <b>₹13 LPA CTC</b> (HRBx 2026) vs Hyderabad ₹11–14, Pune ₹10. Bengaluru median SWE salary, all levels: ₹15.7 LPA.</p>
+
+<h2>The two numbers most students get wrong</h2>
+<div class="callout bad"><b>1. CTC is not take-home.</b> Fixed pay is typically 60–70% of CTC (IT services better, 85–90%). <b>A ₹10 LPA CTC yields roughly ₹55,000–60,000/month in hand.</b> Amazon's stock is <b>backloaded 5% / 15% / 40% / 40%</b> — year-1 cash is far below the headline. At private companies, ESOPs are <b>illiquid</b> (Flipkart, CRED, Razorpay, Meesho); Zomato/Eternal and Paytm equity is exchange-traded. <b>Evaluate base + guaranteed bonus as the real number.</b></div>
+<div class="callout bad"><b>2. ₹6 LPA — not ₹4 LPA — is the Bangalore viability line.</b></div>
+<div class="tblwrap"><table>
+<thead><tr><th>Cost item</th><th>Monthly</th></tr></thead>
+<tbody>
+<tr><td>Shared PG, budget areas</td><td>₹12,000</td></tr>
+<tr><td>1BHK, Electronic City</td><td>₹15,000–22,000</td></tr>
+<tr><td>1BHK, Whitefield / Marathahalli</td><td>₹22,000–35,000</td></tr>
+<tr><td>1BHK, HSR / Koramangala</td><td>₹25,000–40,000</td></tr>
+<tr><td>Food (home-cooked → delivery)</td><td>₹8,000 → ₹18,000</td></tr>
+<tr><td>Transport (metro/bus → own vehicle)</td><td>₹2,000 → ₹6,000+</td></tr>
+<tr><td><b>Bare-minimum solo budget</b></td><td><b>~₹24,000</b></td></tr>
+<tr><td><b>Sustainable independent living</b></td><td><b>₹42,000 in-hand ≈ ₹6 LPA CTC</b></td></tr>
+<tr><td><b>Comfortable</b></td><td><b>₹68,000 ≈ ₹10 LPA CTC</b></td></tr>
+</tbody></table></div>
+<p class="note">A fresher on ₹3.5–4.5 LPA takes home ₹25,000–30,000/month — shared PG, packed food, effectively zero savings. Bengaluru's tech workforce also averages a <b>50-minute one-way commute</b>.</p>
+
+<h2>Bangalore's five corridors</h2>
+<div class="two">
+<div class="card"><h4>Whitefield / ITPL</h4><p style="font-size:13px;margin:0">Largest Tier-1 IT concentration, GCC-heavy. Global R&amp;D centres.</p></div>
+<div class="card"><h4>Outer Ring Road (Marathahalli–Bellandur–Sarjapur)</h4><p style="font-size:13px;margin:0"><b>India's densest tech employment belt — ~500,000 tech workers.</b> Ecospace, Embassy TechVillage, Cessna, Prestige Tech Park.</p></div>
+<div class="card"><h4>Electronic City I–III</h4><p style="font-size:13px;margin:0">The services heartland; cheapest housing. Infosys, Wipro, HCL, Biocon.</p></div>
+<div class="card"><h4>Koramangala / HSR Layout</h4><p style="font-size:13px;margin:0">The startup belt, seed–Series B. Swiggy, Zerodha, Udaan alumni ecosystem.</p></div>
+<div class="card"><h4>Manyata Embassy / Hebbal-North</h4><p style="font-size:13px;margin:0">Heavy GCC presence. IBM, Cognizant, Philips, Target, Nokia, Cisco.</p></div>
+</div>
+
+<h2>Job portal counts — and why they disagree by 100×</h2>
+<div class="tblwrap"><table>
+<thead><tr><th>Portal</th><th>Bangalore</th><th>India</th></tr></thead>
+<tbody>
+<tr><td>Naukri "software fresher"</td><td>18,434</td><td>—</td></tr>
+<tr><td>LinkedIn "entry level software developer"</td><td>34,000+</td><td>106,000+</td></tr>
+<tr><td>Instahyre (all levels)</td><td>4,456</td><td>8,009</td></tr>
+<tr><td>foundit "fresher software developer"</td><td>2,217</td><td>—</td></tr>
+<tr><td>Indeed India</td><td>600+</td><td>—</td></tr>
+<tr><td><b>Glassdoor "entry level software engineer"</b></td><td><b>117</b></td><td>—</td></tr>
+<tr><td>Glassdoor "fresher software engineer"</td><td>35</td><td>357</td></tr>
+<tr><td>Internshala</td><td>70</td><td>122</td></tr>
+</tbody></table></div>
+<div class="callout"><b>Naukri and LinkedIn count any posting whose text contains "fresher," including duplicate consultancy reposts. Glassdoor de-duplicates.</b> foundit's Bangalore "fresher software developer" page returned <em>"Fresher - Legal - Bar Council Enrollment"</em> (eye hospital), <em>"CA Fresher"</em> (BNP Paribas), <em>"Freshers and Experienced Security Personnel"</em> (Akasa Air) and <em>"Sales Executive (Freshers)"</em>. Keyword matching, not role matching.<br><br><b>The honest number of genuine, distinct, open fresher SDE roles in Bangalore is 100–600 — not 18,000.</b> Plan your strategy around that.</div>
+
+<h3>Portal strategy</h3>
+<div class="tblwrap"><table>
+<thead><tr><th>Portal</th><th>Use it for</th><th>Watch out</th></tr></thead>
+<tbody>
+<tr><td>Naukri</td><td>Largest volume; 0–1 yr slider + "Freshness: 1 day"</td><td>Heavy consultancy duplication</td></tr>
+<tr><td>LinkedIn</td><td><b>Recruiter contact and company research</b></td><td>Easy Apply is the most saturated pool on the internet</td></tr>
+<tr><td><b>Cutshort</b></td><td><b>Best portal for honest full-text fresher JDs in Bangalore</b>, with published salary bands</td><td>Small volume — but low competition</td></tr>
+<tr><td>Unstop</td><td>The campus/drive layer — batch-gated hackathons</td><td>2026 drives closing in favour of 2027</td></tr>
+<tr><td>Greenhouse / Lever / Ashby / BuiltIn</td><td><b>Company-side boards: fetchable, un-spammed, real</b></td><td>Need to know which companies to check</td></tr>
+<tr><td>Instahyre</td><td>Recruiter-initiated, good signal-to-noise</td><td>Skews 2+ years</td></tr>
+<tr><td>Internshala / apna</td><td>Genuine fresher-only, internships</td><td>Low CTC; apna mislabels roles</td></tr>
+<tr><td>Turing / Uplers</td><td>Genuine 0–1 yr remote pathway (lists 2024/25/26 batches)</td><td>Comp assessment-gated, undisclosed pre-offer</td></tr>
+<tr><td>Glassdoor</td><td>Best de-duplicated market sizing</td><td>Small absolute numbers</td></tr>
+<tr><td>foundit</td><td>High counts</td><td><b>"Fresher" filter is unreliable</b></td></tr>
+</tbody></table></div>
+
+<h3>Scam patterns — freshers are the primary target</h3>
+<div class="callout bad">
+<ul style="margin:0">
+<li><b>Any request for money is a scam, full stop.</b> TCS: <em>"TCS does not ask for any sort of payment or security deposit from candidates at any stage."</em> Reported fees: ₹3,000–₹25,000 typically, escalating to ₹1,00,000.</li>
+<li><b>Impersonation targets:</b> TCS, Infosys, Accenture, Wipro, HCL, Tech Mahindra, Cognizant, Capgemini, IBM. Verbatim live scam: <em>"This is HR Anjali from Infosys Pvt Ltd, Bangalore… Package: 6.5 LPA + Bonus."</em></li>
+<li><b>Channel:</b> Telegram, WhatsApp, Gmail/Rediff/Yahoo instead of @company.com.</li>
+<li><b>Documents:</b> typos in the company name ("Tata Consultance Services"), bad logos, payment to a <b>personal UPI ID</b>.</li>
+<li><b>Equipment scam:</b> a Bengaluru case issued <b>40 fake appointment letters</b> for a Manyata Tech Park firm, demanding <b>₹1.5 lakh each "for laptops."</b></li>
+<li><b>No technical interview:</b> a documented case — one HR call, salary discussion, direct ₹33 LPA offer, 2-year bond, no skills test. An offer with no technical round is a red flag, not a compliment.</li>
+<li><b>Legitimate but adverse:</b> unpaid "training periods," training bonds, and colleges/consultancies charging a <b>% of CTC</b> post-placement (one Bengaluru college reportedly demanded 21%).</li>
+</ul>
+</div>
+</section>
+
+<!-- ACTION -->
+<section id="action">
+<h2>Which segment should you target?</h2>
+<div class="tblwrap"><table>
+<thead><tr><th>Your situation</th><th>Primary target</th><th>Don't waste time on</th></tr></thead>
+<tbody>
+<tr><td>CGPA &lt;6.0, or backlogs pending</td><td><b>Zoho, startups, Cutshort/Internshala listings, apprenticeships, Wipro Elite</b> (1 backlog allowed at test stage)</td><td>TCS / Infosys / Accenture / Cognizant — filtered before a human sees you</td></tr>
+<tr><td>CGPA 6.0–7.0, 2025 or 2026 batch</td><td><b>IT services premium tracks</b> — TCS Digital/Prime, Infosys SP, Capgemini Senior Analyst, Accenture Advanced ASE (if 65%+)</td><td>On-campus product drives (colleges gate at 7.5)</td></tr>
+<tr><td>CGPA 7.5+, 2026 batch</td><td><b>GCC + product off-campus reqs</b>; hackathon funnels if still eligible</td><td>Base-band IT services as a <em>primary</em> target</td></tr>
+<tr><td>CGPA 7.5+, 2025 batch with a blank year</td><td><b>Off-campus reqs using "graduated within 24 months" wording</b> — Amazon, Oracle, Cisco, Uber, NVIDIA NCG; plus TCS NQT</td><td>2027/2028-gated hackathons — you're aged out</td></tr>
+<tr><td>Strong DSA, weak CGPA</td><td>Product + startups + Juspay/Zoho/Flipkart-GRiD-style challenges</td><td>Anything with a published CGPA gate</td></tr>
+<tr><td>Strong projects, weak DSA</td><td>Startups, machine-coding-first companies, JDs demanding a GitHub link</td><td>FAANG loops until DSA is fixed</td></tr>
+<tr><td>Non-CS branch</td><td>Flipkart GRiD (all branches), <b>Juspay (any discipline)</b>, Zoho, AI startups, TCS/Wipro</td><td>Cognizant GenC engineering (excludes non-circuit); Capgemini restricts MCA/M.Sc to CS/IT</td></tr>
+</tbody></table></div>
+
+<h2>The 90-day plan</h2>
+<div class="card"><h4>Days 1–30 · Fix the filters that eliminate you before a human reads anything</h4>
+<ol style="padding-left:18px;margin:0">
+<li><b>Establish the record.</b> Your exact 10th / 12th / graduation percentages, your cumulative academic gap in months, your age. These four numbers decide which half of the market is even open. Below 60% or with an active backlog, your first move is clearing the backlog — not applying.</li>
+<li><b>Build one deployable project with a real README</b> — problem statement, architecture, tech-stack justification, live link, honest limitations. This is now screened ahead of CGPA. If you've written under 3,000 lines of code, that's the first gap (a real Bangalore JD says so verbatim).</li>
+<li><b>Start the DSA clock.</b> 150 problems: 30 easy / 100 medium / 20 hard. Sequence: arrays → strings → hashing → two pointers → sliding window → binary search → stacks/queues → linked lists → trees/BST → graphs → heaps → greedy → DP.</li>
+<li><b>Register for the mass funnels now</b> — they have fixed windows: TCS NextStep, Infosys portal + InfyTQ, Wipro careers/elite, Cognizant GenC, Accenture indiacampus, Capgemini via Superset.</li>
+</ol></div>
+
+<div class="card"><h4>Days 31–60 · Build the differentiators</h4>
+<ol start="5" style="padding-left:18px;margin:0">
+<li><b>AWS Solutions Architect – Associate.</b> Highest evidence-to-effort credential in the Indian market.</li>
+<li><b>Learn the machine coding round.</b> Solve 8–10 canonical LLD problems end-to-end in 90 minutes each. <b>This is the single highest-leverage, least-prepared-for skill in Bangalore product hiring.</b></li>
+<li><b>Fix the communication filter.</b> Cognizant SVAR, Capgemini spoken English and Accenture's 63-question AI-graded assessment eliminate technically-competent candidates every cycle. Practise reading aloud, sentence repetition, 30-second structured answers, and two essays under a 20-minute clock.</li>
+<li><b>Add one real AI project</b> — a RAG pipeline or agent over data you care about, with an evaluation section — and be able to explain every design choice. 60–70% of fresher JDs now name AI/ML; Razorpay literally evaluates "AI Edge."</li>
+</ol></div>
+
+<div class="card"><h4>Days 61–90 · Apply with the right channel mix</h4>
+<ol start="9" style="padding-left:18px;margin:0">
+<li><b>Channel allocation:</b> ~40% company career portals and Greenhouse/Lever boards (highest signal) · 20% Cutshort / Instahyre / Unstop · 20% referrals via LinkedIn outreach to <em>engineers</em>, not recruiters · 10% Naukri with 0–1 yr + 1-day-freshness · 10% hackathons you're still eligible for.</li>
+<li><b>Target September–November 2026.</b> The year's second hiring peak. <b>October has one of the highest off-campus callback rates</b> because competitors are absorbed in campus season. December is dead. First peak is January–March.</li>
+<li><b>Prepare per-segment, not generically.</b> Services → aptitude + pseudocode + communication + CS fundamentals. GCC/product → DSA depth + behavioural STAR + basic LLD. Startups → machine coding + project depth + ownership stories.</li>
+<li><b>Ask every recruiter three questions, in writing:</b> What's the AI-tool policy for my loop? What's the expected date of joining? Is there a service agreement, and what's its value and duration?</li>
+</ol></div>
+
+<h2>Hackathons — now a primary hiring channel</h2>
+<div class="tblwrap"><table>
+<thead><tr><th>Program</th><th>Outcome</th><th>Eligibility</th></tr></thead>
+<tbody>
+<tr><td><b>Flipkart GRiD 8.0</b></td><td>₹1 lakh/month stipend; FT CTC to <b>₹32.67 LPA</b>; 3 tracks; finals at Bengaluru HQ</td><td>Batches <b>2027–2030</b>, all branches, <b>no published CGPA cutoff</b>, explicitly targets Tier-2/3</td></tr>
+<tr><td>Uber HackTag 2026</td><td>₹1.5 lakh/month</td><td>—</td></tr>
+<tr><td>Adobe India University Hackathon</td><td>₹1.1 lakh/month + <b>PPI for top 50</b></td><td>Graduating 2026–2029, <b>min 70%</b></td></tr>
+<tr><td>Walmart CodeHers</td><td>Up to <b>₹27 LPA</b></td><td>Women, <b>7.0+ CGPA, batch 2026</b></td></tr>
+<tr><td>Goldman Sachs India Hackathon</td><td>PPI fast-track; 12-hour HackerRank format</td><td>Graduating <b>2027 &amp; 2028</b>, eligible-college list</td></tr>
+<tr><td>JPMorgan Code for Good</td><td>~2,000–3,000 selected → <b>300–500 offers</b></td><td>Penultimate year, <b>7+ CGPA</b></td></tr>
+<tr><td>Juspay Hiring Challenge</td><td><b>₹19–27 LPA</b></td><td>Any B.Tech discipline, no backlogs</td></tr>
+<tr><td>Infosys HackWithInfy</td><td>SP offers <b>₹9.5–21 LPA</b></td><td>Pre-final/final year</td></tr>
+<tr><td>TCS CodeVita S13</td><td>Ninja ₹3.36–7 / Digital-Prime ₹9–14 LPA</td><td>Open</td></tr>
+<tr><td>Myntra WeForShe HackerRamp</td><td>PPI + internship, finale at Bengaluru HQ</td><td>Women, pre-final/final year</td></tr>
+</tbody></table></div>
+<div class="callout warn"><b>Timing warning for 2025/2026 passouts:</b> the marquee hackathon funnels have already shifted eligibility to <b>2027 and 2028</b> graduating years. Flipkart GRiD is 2027–2030. Goldman is 2027/2028. Salesforce is already running a 2027-batch drive. If you're a 2025 or 2026 passout, the hackathon door is closing — your route is <b>off-campus requisitions and internship conversion</b>.</div>
+
+<h2>Ten things to verify before accepting anything</h2>
+<div class="card"><ol style="padding-left:18px;margin:0">
+<li>Is the offer letter from an <b>@company.com</b> domain?</li>
+<li>Has any money been requested? (If yes: scam. No exceptions.)</li>
+<li>Is there a <b>date of joining in writing, within 90 days</b>?</li>
+<li>What is the <b>bond</b>, in months and rupees? (Wipro Elite: 12 months / ₹75,000. <b>Wipro WILP: 60 months.</b> Capgemini: ~2 years.)</li>
+<li>What is the <b>fixed component</b> vs variable, and the actual monthly in-hand?</li>
+<li>If ESOPs are quoted: liquid (listed) or illiquid (private)? Strike price and vesting cliff?</li>
+<li>Is the <b>work location guaranteed</b> or "any company location"? (Mphasis, Cognizant, TCS reserve allocation rights.)</li>
+<li>Are <b>rotational or night shifts</b> required? (DXC, Tech Mahindra, Infosys BPM, Cognizant.)</li>
+<li>Is there a <b>post-joining training assessment you can be terminated for failing</b>? (Infosys terminated 300+ freshers at Mysuru for exactly this.)</li>
+<li>Did you have a real technical interview?</li>
+</ol></div>
+
+<h2>What this research could not establish</h2>
+<div class="card">
+<ul style="margin:0">
+<li><b>Mid-tier firms publish almost nothing.</b> Coforge, Nagarro, Birlasoft, Zensar, Sonata, Happiest Minds, Cyient, KPIT, Quest Global, UST, Virtusa, Atos, Tata Elxsi run opportunistic postings, not branded programs. Any "cutoff" quoted for them online is inference.</li>
+<li><b>CTC is unpublished for most employers</b> — IBM, Deloitte USI, Genpact, Qualcomm, TI, NVIDIA, Walmart, Target, Amex, ServiceNow, Wells Fargo, Morgan Stanley. Every circulating number is candidate-reported.</li>
+<li><b>~35 named companies could not be verified</b> within the research window (Intel, Micron, AMD, Arista, Juniper, VMware, Dell, HPE, Atlassian, Visa, Mastercard, PayPal, Apple India, LinkedIn India; Hasura, MoEngage, Whatfix, Darwinbox, Zeta, Setu, Chargebee, Postman, BrowserStack, Freshworks India, Nykaa, Lenskart, Paytm, Rapido, Delhivery, Udaan and others). <b>Absence of evidence, not evidence of absence.</b></li>
+<li><b>Employability figures disagree by 14 points</b> — India Skills Report says 56.35% national / 80% CS; Mercer|Mettl says 42.6%. The optimistic number measures test-passing; the pessimistic one measures job-readiness. <b>Plan against the lower figure.</b></li>
+<li><b>Eligibility changes every cycle.</b> Re-verify every figure on the live requisition — batch years, CGPA gates and locations change per posting.</li>
+</ul>
+</div>
+</section>
+
+<footer>
+Compiled 20 August 2026 from six parallel research streams across official careers pages, job portals, market reports (NASSCOM, Zinnov, Naukri JobSpeak, foundit, Quess, LinkedIn, Coursera, Wheebox, Mercer|Mettl, TeamLease) and candidate interview reports.<br><br>
+Aggregator-sourced figures (PrepInsta, FACE Prep, PapersAdda, OffCampusJobs4u, upGrad, JobRise and similar) are candidate-reported and directional, not employer-published. <b>Verify every eligibility criterion on the live requisition before acting on it.</b> Full source list is in the accompanying Markdown report.
+</footer>
+</div>
+
+<script>
+const C=[
+["TCS","serv","NQT → Ninja / Digital / Prime","2024, 2025, 2026","60% in 10th, 12th, diploma, UG & PG · zero backlogs · gap ≤24 months · age 18–28 · no extended education","190 min / 83 Q. Foundation 75 min (Numerical/Verbal/Reasoning) + Advanced 115 min incl. Coding 90 min. No negative marking. No section switching or revisiting; browser switch terminates the exam","Ninja ₹3.4–4.5 · Digital ₹7.09–7.60 · Prime ₹9.09–11.80"],
+["Infosys","serv","SE / DSE / Specialist Programmer L1-L3 / Power Programmer · InfyTQ · HackWithInfy","2024–2026","10th 60% · 12th 60% · graduation 65%/6.5 (DSE 6.5, Power Programmer 75%) · no arrears · gap ≤2 yrs · 9-month cooling period","7 sections / 60 Q / 120 min: Logical, Technical-Math, Verbal, Pseudo Code, Puzzles, Grammar, Writing. Sectional cutoffs. SP track adds 2 real DSA problems / 60 min. ~3.4 lakh applicants for ~40,000 seats","SE ₹3.6–5.0 · DSE ₹6.25–9.0 · SP-L1 ₹11 · SP-L2 ₹16 · SP-L3 ₹21"],
+["Wipro","serv","Elite NTH (Project Engineer) / Turbo / WILP","2025, 2026 (WILP 2024–26)","Elite 60%/6.0 · Turbo 65% · WILP 60% + core Maths mandatory · ONE BACKLOG ALLOWED at assessment (clear before offer) · gap ≤1 yr · age ≤28","128 min: Aptitude 52 Q/48 min → Written Communication essay 20 min (>5 errors penalised) → Coding 2 problems/60 min → Business Discussion","Elite ₹3.50 · Turbo ₹4.5–5.0 · WILP ₹6.0 after 4 yrs · Elite bond 12 months/₹75,000 · WILP bond 60 MONTHS"],
+["Cognizant","serv","GenC / GenC Next / GenC Elevate / GenC Pro","2025, 2026","60%/6.0 throughout · no pending backlogs · gap ≤2 yrs · age 18–30 no relaxation · circuit branches for engineering intake","Up to ~283 min: Communication 60 Q/58 min (read-aloud, sentence repetition, storytelling) → Aptitude 80 Q/100 min → Technical 105–120 min in clusters (Java+SQL or Python+SQL+cloud) → Interview. SVAR is heavily eliminative","GenC ₹4.0–4.5 · Elevate ₹4.5–5.4"],
+["Accenture","serv","Associate Software Engineer / Advanced ASE (11A)","up to 2025 in the Jan-2026 drive","65% / 7.25 CGPA in 10th, 12th AND graduation — HIGHEST BAR of any mass recruiter · no active backlogs · no gap during current degree","5 stages: Mock 20 min → Cognitive & Behavioural 40 min → Technical 45 min (pseudocode weighted highest) → Coding 2–3 problems/45–60 min → Communication: own AI-graded test, 63 Q / 6 sections, 20–30 sec response windows","ASE ₹4.5–6.5 · Advanced ASE ₹6.5–9.0"],
+["Capgemini","serv","Analyst (Exceller) / Senior Analyst","2025, 2026","60% throughout · MCA/M.Sc restricted to CS/IT · no active backlogs · gap ≤1 yr","4 assessments: Technical MCQ + English essay 20 min + game-based cognitive (4 games from a pool of 24, 6 min each) → Coding, given ONLY to the Senior Analyst track → Spoken English (elimination) → Tech + HR. No negative marking","Analyst ₹4.25 · Senior Analyst ₹7.5 · ~2-yr bond"],
+["LTIMindtree","serv","Graduate + Premium/Digital track","2025, 2026","60%/6.0 throughout · no backlogs at joining","6 sections: Quant 10Q/20m, Logical 15Q/25m, Verbal 20Q/20m, Coding 2 problems/60m, Technical MCQ, Psychometric 50Q/20m → Tech → HR","Graduate ₹4.0–5.5 · Premium ₹6.5–9.0"],
+["Tech Mahindra","serv","Trainee Engineer / Associate Software Engineer","2024, 2025, 2026","60% in 10th, 12th, graduation, PG · no backlogs · age 18–28 · shift willingness","Online test 75 Q / 50 min (English 35, Quant 11, Reasoning 29) → story writing from a random image (unique to TM) → Technical → HR","~₹5.5 in recent ASE drives"],
+["HCLTech","serv","TechBee (post-Class-XII) + graduate hiring","Class XII 2025/2026","60% in Maths · JEE Mains 80th-percentile scorers skip the aptitude test","HCL CAT (quant + logical) → face-to-face interview → Versant AI-graded spoken English","TechBee ₹10k/mo stipend → ₹2.50 LPA · program fee ₹1.40 lakh · AI-skilled graduate hires quoted ₹18–22 LPA"],
+["DXC Technology","serv","Associate Professional","2024, 2025, 2026","60% throughout · no active backlogs · gap ≤1 yr","AMCAT-based 100 min: English, Logical, Quant, Programming MCQ, Coding/Debugging 7Q/20m, Essay 20m → Tech → HR","Not published · rotational/24×7 shifts required"],
+["IBM India","serv","Associate System Engineer","2024, 2025, some 2026","60%/6.0 throughout · no active backlogs","OA + technical + HR (not published). JD demands Java / C++ / Python / Node.js + SDLC","~₹4.5 LPA (aggregator estimate)"],
+["Mphasis","mid","Associate Software Engineer","Current + prior batch","60% average in course program · must accept allocation to any location","Online test (Logical, Quant, Verbal, Programming) → Group Discussion ~15 min/candidate → Technical → HR","Not published"],
+["Hexaware","mid","Graduate Engineer Trainee","Current batch","60% / 6.0 across 10th, 12th, degree · no backlogs","Aptitude 60Q/60m → Technical MCQ (DS, algos, DBMS, OS, networks, OOP) → Coding 2–3 problems, 45–60 min, LeetCode Easy–Medium → HR","Not disclosed · fresher intake is Chennai/Mumbai/Pune, NOT Bangalore"],
+["Coforge","mid","Graduate Engineer Trainee","2026","60–65% commonly cited (aggregator)","Aptitude 30–45 Q → Technical MCQ or coding → Technical interview → HR. Emphasis on breadth of CS fundamentals","Not published"],
+["Nagarro","mid","Software Engineer Trainee","2026","No published cutoff","Logical + aptitude + coding → coding screen → technical 25–45 min → HR. Heaviest logical-reasoning and edge-case weight of the mid-tier set","Not published"],
+["Persistent Systems","mid","Java & React developer / ASE","2025, 2026, 2027","Minimum 65% · accepts Diploma, BCA, B.Sc","Written test (verbal, quant, reasoning) → Technical → HR. JD demands Java + React full-stack","Not disclosed"],
+["NTT DATA","mid","Technical Graduate Trainee","2025 batch ONLY","CCNA or CCNP certification MANDATORY","Screening → technical (subnetting, OSI, routing, VLANs) → HR","₹18,000/mo × 3 months → ₹3.2 LPA · Noida only, WFO mandatory"],
+["EY GDS","mid","Technology Consultant / Associate Software Engineer","2025, 2026","60–70% throughout","OA (aptitude + technical MCQ + behavioural) → Technical interview with project deep-dive → HR/Partner. Skills: Java, Python, SQL, Azure/AWS","Not published · Bangalore listed"],
+["Deloitte USI","mid","Associate Analyst / Junior Analyst / Analyst","2025, 2026, 2027","Not published","Not published. Skills: SQL, Tableau/Qlik, Azure/AWS","Not published · Hyderabad-weighted, Bengaluru for select roles"],
+["Infosys BPM","mid","Data Process Executive","2023–2025 (Bengaluru role)","Bengaluru: B.E/B.Tech CS ONLY · 10+2+3 = 15 yrs full-time education mandatory · B.Com/BBA/BCA/B.Sc/MBA/MCA explicitly excluded","Applications via Naukri only, no walk-in","Not disclosed · night/flexible shifts"],
+["Amazon India","prod","SDE-I · SDE Intern","2024, 2025, 2026 — JD says 'graduated within the last 24 months'","60%+ or 6.5+ CGPA across 10th/12th/grad · no backlogs at joining","OA 2–3.5 hrs: 2 DSA (medium–hard) 70–105 min + Work Styles Survey ~80 Likert items on the 16 LPs + sometimes debugging. Loop: 2 tech rounds → Hiring Manager (LLD) → BAR RAISER. AI use BANNED — detection = disqualification","₹16–28 LPA · RSUs backloaded 5/15/40/40"],
+["Google India","prod","Software Engineer III / L3 · STEP","Program-gated","No published CGPA cutoff","2026 loop: Code Comprehension round (read/debug/optimise), revamped Googleyness & Leadership with technical design, open-ended engineering round for juniors. Piloting AI-assisted interviews with Gemini","₹25–36 LPA TC"],
+["Microsoft IDC","prod","SDE (New Grad) · Explore Internship","New grad / pre-final year","No published cutoff; placement cells gate at 7.5–8.0 · no active backlogs","OA 2–3 problems / 60 min (Codility/HackerRank) → DSA round → design+coding → project/OS/DBMS/networks → senior leader → HR. Trees in ~80% of reported interviews","₹18–33 LPA"],
+["Salesforce","prod","AMTS / Associate MTS","BATCH 2026 ONLY (2027 drive already running)","MINIMUM 7.5 CGPA · no active backlogs · B.E/B.Tech CS/IT/ECE/EE","Strong DSA focus; Java/Python/C++/JavaScript. Preferred: AI/Data/CRM exposure, scalable system design","₹18–30 LPA (expected)"],
+["Cisco","prod","Software Engineer · SE Trainee / Technical Graduate Apprentice · Code with Cisco","2025, 2026 · Code with Cisco is 2027","~7.0+ CGPA (varies by posting) · 70% in 10th/12th · no backlogs. Code with Cisco has NO CGPA BAR","90-min proctored OA: ~40 MCQs + 2 DSA, no negative marking, heavy networking (OSI/TCP-IP, subnetting, DNS, routing) → 2 technical rounds → managerial/HR","₹15–20 LPA"],
+["Adobe India","prod","MTS-1 / Software Engineer","Graduating 2026–2029 (hackathon route)","MIN 70% · B.Tech/M.Tech/Dual, all branches","Adobe India University Hackathon → top 50 get PPI → PPO. Women-in-Tech track","₹15–25 LPA · hackathon intern stipend ₹1.10 lakh/month"],
+["Goldman Sachs","prod","Engineering Analyst","Hackathon: graduating 2027 & 2028","Eligible-college list (IIT-heavy); separate Quant vs CS lists","HackerRank OA 90–120 min (2 medium-hard DSA + MCQs) → HireVue behavioural → 2 CoderPad live rounds 45–60 min → Superday 3–5 back-to-back. ~20% of interview time on puzzles. ~2-min answer caps block AI","₹15–36 LPA (consensus ₹24)"],
+["JPMorgan Chase","prod","Software Engineer Program Analyst","Penultimate year for Code for Good","7+ CGPA for Code for Good","Code for Good: 24-hr hackathon, teams of 5–6, real NGOs. ~2,000–3,000 selected → 300–500 offers. Otherwise HackerRank OA → phone screen → Super Day (DSA + fundamentals/design + behavioural)","Intern ₹80,000/month · FT ₹15–25 LPA"],
+["Oracle India","prod","Software Developer 1 / Associate SWE / Support Engineer 1","2024, 2025, 2026 accepted on off-campus reqs","Not published","CV screen → recruiter call (clarify product org vs services org) → medium DSA assessment → domain round → manager + HR. OCI/AI teams reopened intake after the 2026 restructuring","Associate ₹8–14 · OCI/product ₹11–34"],
+["SAP Labs India","prod","Developer Associate · iXp Intern","New grad","BE/BTech/ME/MTech/MCA","iXp internship → conversion is the main channel","₹8–14 LPA"],
+["Uber India","prod","Software Engineer I","2025 batch on the 2026 drive","B.E/B.Tech or Integrated Dual · CS/ECE/EE","Uber University Careers portal; HackTag 2026 (₹1.5 lakh/month). JD names Go, Python, Ruby, Java, C/C++","Peer band ₹25–40 LPA"],
+["Meta India","prod","Software Engineer (University Grad)","University-grad reqs","Not published","ACTIVELY ENCOURAGES AI — 60-min AI-assisted coding round with multiple models in CoderPad","E3 ≈ ₹25–35 LPA"],
+["NVIDIA","prod","New College Grad 2026 — Systems SW / Test & Tools / Formal Verification","Explicit NCG-2026 requisitions","CS/ECE/EE","Off-campus NCG req IDs + select campus","Not published — among India's top entry payers"],
+["Qualcomm","prod","Associate Engineer · Interim Engineering Intern","Campus program","B.E/B.Tech/M.Tech CS/ECE","Requires C/C++, OS internals, data structures, OOP, Linux kernel, Android","Not published · embedded band ₹12–22 LPA"],
+["Texas Instruments","prod","Analog Layout / Firmware / Applications / Test Engineer","Campus + year-round off-campus","B.Tech/M.Tech ECE/EEE/E&I · 60%+ in 10th/12th/grad (7.0 CGPA) · no backlogs","Written test (aptitude + analog: op-amps, MOSFETs, filters; digital: logic, FSMs, Verilog) → 1–3 technical rounds opening with 20–30 min purely on your CV projects → HR","Not published · semiconductor entry ₹15–25 LPA"],
+["Walmart Global Tech India","prod","SE Intern → SE III · Sparkathon · CodeHers · Sparkplug","2025–2027 across intern reqs","CodeHers: women, 7.0+ CGPA, batch 2026","Hackathon and internship funnels are the primary pipeline","₹20–32 LPA peer band · CodeHers up to ₹27 LPA"],
+["Target India","prod","Engineer – Backend · Engineering Apprentice","Off-campus + apprenticeship","JD asks 1+ years despite fresher marketing","JD: proficiency in Java, Kotlin, Python or Go; distributed computing, microservices, API design","Not published"],
+["Wells Fargo India","prod","Analyst Program → SE / Data Engineer / InfoSec","Graduating Mar–Aug 2027 (FT) / 2028 (intern)","Bachelor's/dual degree in Engineering","India Early Careers Analyst Program + 8–10 week internship","Not published"],
+["Morgan Stanley","prod","Technology Summer / Spring Analyst","Program-year gated","Undergrad","morganstanley.tal.net campus portal","Not published"],
+["ServiceNow India","prod","Software Engineer","Rolling reqs","Not published","Direct careers portal. 31 India reqs live; stated plan to double the India team","Not published"],
+["American Express","prod","Associate – Technology Operations Engineering · IT Apprentice","Apprentice + associate tracks","Not published","Off-campus + apprenticeship","Not published"],
+["Optum / UnitedHealth","prod","Software Engineer · Full Stack Engineer","Fresher-open reqs","Not published","Java/SQL/UNIX stack","Not published"],
+["Flipkart","start","SDE-1 · ML Engineer · Data Scientist · GRiD 8.0","GRiD: batches 2027–2030","NO PUBLISHED CGPA CUTOFF · all engineering branches · explicitly targets Tier-2/3 colleges","GRiD: profile screen → 90-min coding → business case + coding → national finals at Bengaluru HQ, top 48. Regular loop: OA → MACHINE CODING → DSA → LLD/HM → culture","₹18–25 LPA typical · top GRiD/campus offers to ₹32.67 LPA"],
+["Myntra","start","SDE-1 · Intern · WeForShe HackerRamp","Pre-final/final year","Women-only for HackerRamp · B.E/B.Tech and dual degree","OA → mentorship → prototype → virtual jury → grand finale at Bengaluru HQ. Outcome is PPI + internship, not a guaranteed PPO","Tracks Flipkart Group bands"],
+["Swiggy","start","SDE-I · Associate SDE","Selective — public SDE-I posts now ask 1–3 yrs","Not published","OA → machine coding → DSA → HM. JDs specify 'Java or Golang'; emphasise rapid iterative development","₹8–24 LPA (wide aggregator spread)"],
+["Zomato / Eternal","start","SDE-1","Campus + off-campus","Not published","Short campus cycles","₹14–20 LPA · LISTED COMPANY = liquid ESOP"],
+["Zepto","start","SDE Intern · Data Scientist (0–2 yrs)","Interns + DS yes; SDE-1 postings ask 3–6 yrs","Not published","DSA → LLD/design (coupon service with schema, order management, calendar clone, Ola/Uber) → hiring manager → HR","₹7–18 LPA"],
+["Meesho","start","SDE Trainee / SDE Intern","Trainee program","Not published","NextLevel screening 45 min (OOP, DS, algorithms, DBMS, networking) → HackerRank 105 min → technical interview 90 min (coding + system design) → hiring manager 45 min. All knockout, all remote","Intern ₹35k/mo · FTE ₹15 LPA + ESOP (official)"],
+["PhonePe","start","SDE (campus)","Campus + off-campus + hiring challenges","60% in 10th, 12th AND graduation — a rare explicit academic gate in this segment","OA 80–90 min / ~3 problems → 2 technical rounds (DSA, then OS/Linux/DP/language depth) → HR","₹9–22 LPA"],
+["Razorpay","start","SDE · Forward Deployed Engineer","Limited fresher intake, AI-heavy","Not published","Greenhouse board, referrals. Careers page states three evaluation areas: Role Fit, Synergy, and 'AI EDGE — ability to integrate AI into workflows'","₹8–22 LPA"],
+["CRED","start","SDE-1","'Internship experience strongly preferred'","Not published","24-hour take-home → DSA round IN A GOOGLE DOC (not an IDE) → 2.5-hour LLD/machine-coding elimination gate. Rewards readable extensible code over LeetCode volume","₹10–25 LPA, heavy ESOP"],
+["Juspay","start","SDE","Any B.Tech/B.E discipline · no backlogs","No CGPA gate published — ONE OF THE MOST FRESHER-FRIENDLY IN INDIA","~30-min quiz → 90-min OA (2–3 problems) → 2-DAY HACKATHON building a real mobile/web app. Requires functional programming (Haskell/PureScript house stack). 4–6 week cycle","Intern ₹40k/mo · FTE ₹19–27 LPA"],
+["Zoho","start","Software Developer / Member Technical Staff","Own drives + Zoho Schools of Learning","NO MINIMUM CGPA · no active backlogs · BE/B.Tech/ME/M.Tech · non-degree path exists","5 rounds: quant 1.5 hr/25 Q → programming in C, 75 min/5 Q → advanced programming 1 hr/1 Q → technical (OOP, DBMS, OS) → HR. Plus an offline LLD console-game round","₹6–8 LPA"],
+["Groww","start","SDE-1","Low volume","Not published","Greenhouse, off-campus. Values: 'own both successes and failures, freedom to experiment'","₹8–13 LPA"],
+["Zerodha","start","Software Developer","Tiny volume, no recruiters, no aggressive campus","Not published","Direct application at careers.zerodha.com","₹14–20 LPA + profit-share culture"],
+["Dream11","start","SDE-1","Off-campus drives + campus","Not published","Standard product loop","₹18–25 LPA"],
+["Sarvam AI","start","AI/LLM Engineer · Intern","SELF-TAUGHT CANDIDATES EXPLICITLY CONSIDERED","No degree gate — 'portfolio and shipping ability matter more than college pedigree'","Direct portal, LinkedIn, GitHub-led. Stack: Python, LangChain/LlamaIndex, RAG, prompt engineering, agentic frameworks, embeddings, evals","AI fresher band ₹8–18 LPA"],
+["Atlan","start","Engineer (no explicit new-grad ladder)","Rare, work-sample gated","Not published","Intro chat → hiring manager deep dive → WORK SAMPLE CHALLENGE → senior-leader 'Atlanian' round → offer. States: 'AI tools are in every workflow. Zero hand-crafted code is the standard'","Not disclosed"],
+["Fractal / Mu Sigma / Tiger Analytics","start","Decision Scientist / Analyst","Volume campus hiring","Not published","Campus, aptitude + case format","₹4–12 LPA"],
+["Krutrim","start","AI Engineer (LLM/agentic)","EFFECTIVELY NO — AVOID","—","Headcount 550+ (Aug 2025) → ~40–50 → 20–25 after July 2026 cuts","—"],
+["Byju's / Unacademy / upGrad","start","—","DO NOT TARGET","—","Byju's insolvent; Unacademy repeatedly cut headcount","—"],
+["Sprinto / Toplyne / Nirmata","start","—","NO entry-level engineering roles listed as of Aug 2026","—","Boards show Lead/Senior/Staff only","—"]
+];
+const NAMES={serv:["IT services","p-serv"],mid:["Mid-tier / GSI","p-mid"],prod:["Product / GCC","p-prod"],start:["Indian product / startup","p-start"]};
+const rows=document.getElementById('rows'),q=document.getElementById('q'),seg=document.getElementById('seg'),cnt=document.getElementById('count');
+function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;')}
+function draw(){
+  const t=q.value.toLowerCase(),s=seg.value;
+  const f=C.filter(r=>(!s||r[1]===s)&&(!t||r.join(' ').toLowerCase().includes(t)));
+  rows.innerHTML=f.map(r=>`<tr><td><b>${esc(r[0])}</b></td><td><span class="pill ${NAMES[r[1]][1]}">${NAMES[r[1]][0]}</span></td><td>${esc(r[2])}</td><td>${esc(r[3])}</td><td>${esc(r[4])}</td><td>${esc(r[5])}</td><td>${esc(r[6])}</td></tr>`).join('');
+  cnt.textContent=`Showing ${f.length} of ${C.length} companies. Blank or "not published" means the employer discloses nothing publicly.`;
+}
+q.addEventListener('input',draw);seg.addEventListener('change',draw);draw();
+document.getElementById('tabs').addEventListener('click',e=>{
+  if(!e.target.classList.contains('tab'))return;
+  document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));
+  document.querySelectorAll('section').forEach(x=>x.classList.remove('on'));
+  e.target.classList.add('on');
+  document.getElementById(e.target.dataset.t).classList.add('on');
+  window.scrollTo({top:0,behavior:'smooth'});
+});
+</script>
+</body>
+</html>
